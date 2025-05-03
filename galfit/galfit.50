@@ -1,0 +1,90 @@
+
+#  Input menu file: galfit_weird.feedme
+
+#  Chi^2/nu = 13.788,  Chi^2 = 1248945.500,  Ndof = 90579
+
+================================================================================
+# IMAGE and GALFIT CONTROL PARAMETERS
+A) science_M49_final.fits      # Input data image (FITS file)
+B) imgblock_M49.fits      # Output data image block
+C) none                # Sigma image name (made from data if blank or "none") 
+D) none                # Input PSF image and (optional) diffusion kernel
+E) 1                   # PSF fine sampling factor relative to data 
+F) none                # Bad pixel mask (FITS image or ASCII coord list)
+G) none                # File with parameter constraints (ASCII file) 
+H) 3300 3600 1150 1450 # Image region to fit (xmin xmax ymin ymax)
+I) 100    100          # Size of the convolution box (x y)
+J) 18.840              # Magnitude photometric zeropoint 
+K) 0.537  0.537        # Plate scale (dx dy)   [arcsec per pixel]
+O) regular             # Display type (regular, curses, both)
+P) 0                   # Choose: 0=optimize, 1=model, 2=imgblock, 3=subcomps
+
+# INITIAL FITTING PARAMETERS
+#
+#   For component type, the allowed functions are: 
+#       sersic, expdisk, edgedisk, devauc, king, nuker, psf, 
+#       gaussian, moffat, ferrer, and sky. 
+#  
+#   Hidden parameters will only appear when they're specified:
+#       Bn (n=integer, Bending Modes).
+#       C0 (diskyness/boxyness), 
+#       Fn (n=integer, Azimuthal Fourier Modes).
+#       R0-R10 (coordinate rotation, for creating spiral structures).
+#       To, Ti, T0-T10 (truncation function).
+# 
+# ------------------------------------------------------------------------------
+#   par)    par value(s)    fit toggle(s)    # parameter description 
+# ------------------------------------------------------------------------------
+
+# Component number: 1
+ 0) sersic                 #  Component type
+ 1) 3426.2178 1299.5665 1 1  #  Position x, y
+ 3) 6.7056      1          #  Integrated magnitude 
+ 4) 30.9620     1          #  R_e (effective radius)   [pix]
+ 5) 1.9714      1          #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0.0000      0          #     ----- 
+ 7) 0.0000      0          #     ----- 
+ 8) 0.0000      0          #     ----- 
+ 9) 1.0000      0          #  Axis ratio (b/a)  
+10) 0.0000      0          #  Position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 2
+ 0) sersic                 #  Component type
+ 1) 3429.5493 1297.2383 1 1  #  Position x, y
+ 3) 5.7947      1          #  Integrated magnitude 
+ 4) 59.7453     1          #  R_e (effective radius)   [pix]
+ 5) 2.3415      1          #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0.0000      0          #     ----- 
+ 7) 0.0000      0          #     ----- 
+ 8) 0.0000      0          #     ----- 
+ 9) 1.0000      0          #  Axis ratio (b/a)  
+10) 0.0000      0          #  Position angle (PA) [deg: Up=0, Left=90]
+B1) 3.328e+00   1          #  Bending mode 1 amplitude
+B2) 4.317e+00   1          #  Bending mode 2 amplitude
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 3
+ 0) sersic                 #  Component type
+ 1) 3425.9324 1294.1124 1 1  #  Position x, y
+ 3) 5.5445      1          #  Integrated magnitude 
+ 4) 66.4681     1          #  R_e (effective radius)   [pix]
+ 5) 2.3515      1          #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0.0000      0          #     ----- 
+ 7) 0.0000      0          #     ----- 
+ 8) 0.0000      0          #     ----- 
+ 9) 1.0000      0          #  Axis ratio (b/a)  
+10) 0.0000      0          #  Position angle (PA) [deg: Up=0, Left=90]
+B1) -6.265e+00   1          #  Bending mode 1 amplitude
+B2) -8.778e-01   1          #  Bending mode 2 amplitude
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 4
+ 0) sky                    #  Component type
+ 1) 205.0019    1          #  Sky background at center of fitting region [ADUs]
+ 2) -0.2715     1          #  dsky/dx (sky gradient in x)     [ADUs/pix]
+ 3) 0.2886      1          #  dsky/dy (sky gradient in y)     [ADUs/pix]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+================================================================================
+

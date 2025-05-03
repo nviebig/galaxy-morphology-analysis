@@ -1,0 +1,103 @@
+
+#  Input menu file: galfit_wirlpool.feedme
+
+#  Chi^2/nu = 9.632,  Chi^2 = 5407876.500,  Ndof = 561473
+
+================================================================================
+# IMAGE and GALFIT CONTROL PARAMETERS
+A) science_whirlpool_final.fits      # Input data image (FITS file)
+B) imgblock_whirlpool.fits      # Output data image block
+C) none                # Sigma image name (made from data if blank or "none") 
+D) none                # Input PSF image and (optional) diffusion kernel
+E) 1                   # PSF fine sampling factor relative to data 
+F) none                # Bad pixel mask (FITS image or ASCII coord list)
+G) none                # File with parameter constraints (ASCII file) 
+H) 2600 3400 1200 1900 # Image region to fit (xmin xmax ymin ymax)
+I) 100    100          # Size of the convolution box (x y)
+J) 18.100              # Magnitude photometric zeropoint 
+K) 0.537  0.537        # Plate scale (dx dy)   [arcsec per pixel]
+O) regular             # Display type (regular, curses, both)
+P) 0                   # Choose: 0=optimize, 1=model, 2=imgblock, 3=subcomps
+
+# INITIAL FITTING PARAMETERS
+#
+#   For component type, the allowed functions are: 
+#       sersic, expdisk, edgedisk, devauc, king, nuker, psf, 
+#       gaussian, moffat, ferrer, and sky. 
+#  
+#   Hidden parameters will only appear when they're specified:
+#       Bn (n=integer, Bending Modes).
+#       C0 (diskyness/boxyness), 
+#       Fn (n=integer, Azimuthal Fourier Modes).
+#       R0-R10 (coordinate rotation, for creating spiral structures).
+#       To, Ti, T0-T10 (truncation function).
+# 
+# ------------------------------------------------------------------------------
+#   par)    par value(s)    fit toggle(s)    # parameter description 
+# ------------------------------------------------------------------------------
+
+# Component number: 1
+ 0) expdisk                #  Component type
+ 1) 3001.6863 1541.0566 1 1  #  Position x, y
+ 3) 32.1131     1          #  Integrated magnitude 
+ 4) 135.4055    1          #  R_s (disk scale-length)   [pix]
+ 5) 0.0000      0          #     ----- 
+ 6) 0.0000      0          #     ----- 
+ 7) 0.0000      0          #     ----- 
+ 8) 0.0000      0          #     ----- 
+ 9) 0.0500      1          #  Axis ratio (b/a)  
+10) 44.0873     1          #  Position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 2
+ 0) sersic                 #  Component type
+ 1) 3000.5288 1542.1951 1 1  #  Position x, y
+ 3) 4.0907      1          #  Integrated magnitude 
+ 4) 73.7958     1          #  R_e (effective radius)   [pix]
+ 5) 2.8260      1          #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0.0000      0          #     ----- 
+ 7) 0.0000      0          #     ----- 
+ 8) 0.0000      0          #     ----- 
+ 9) 1.0000      0          #  Axis ratio (b/a)  
+10) 0.0000      0          #  Position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 3
+ 0) sersic                 #  Component type
+ 1) 2989.5742 1457.8042 1 1  #  Position x, y
+ 3) 3.9301      1          #  Integrated magnitude 
+ 4) 251.9482    1          #  R_e (effective radius)   [pix]
+ 5) 0.1935      1          #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0.0000      0          #     ----- 
+ 7) 0.0000      0          #     ----- 
+ 8) 0.0000      0          #     ----- 
+ 9) 1.0000      0          #  Axis ratio (b/a)  
+10) 0.0000      0          #  Position angle (PA) [deg: Up=0, Left=90]
+B1) 2.089e+02   1          #  Bending mode 1 amplitude
+B2) 1.198e+02   1          #  Bending mode 2 amplitude
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 4
+ 0) sersic                 #  Component type
+ 1) 2919.0378 1470.5786 1 1  #  Position x, y
+ 3) 3.9331      1          #  Integrated magnitude 
+ 4) 253.7662    1          #  R_e (effective radius)   [pix]
+ 5) 0.0901      1          #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0.0000      0          #     ----- 
+ 7) 0.0000      0          #     ----- 
+ 8) 0.0000      0          #     ----- 
+ 9) 1.0000      0          #  Axis ratio (b/a)  
+10) 0.0000      0          #  Position angle (PA) [deg: Up=0, Left=90]
+B1) 2.117e+02   1          #  Bending mode 1 amplitude
+B2) 1.170e+02   1          #  Bending mode 2 amplitude
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 5
+ 0) sky                    #  Component type
+ 1) 70.0705     1          #  Sky background at center of fitting region [ADUs]
+ 2) -4.515e-02     1       #  dsky/dx (sky gradient in x)     [ADUs/pix]
+ 3) 9.358e-02      1       #  dsky/dy (sky gradient in y)     [ADUs/pix]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+================================================================================
+
